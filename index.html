@@ -6,6 +6,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .cont {
+            position: relative;
+            margin: 100px;
+            display: inline-block;
+            transform: rotate(180deg);
+            /* animation: rotate 4s infinite; */
+        }
+
+        .cont:before,
+        .cont:after {
+            content: '';
+            position: absolute;
+            left: -7%;
+            width: 110%;
+            height: 50%;
+            border-right: 5px solid #000;
+            border-left: 5px solid #000;
+            z-index: 1;
+
+        }
+
+        .cont:before {
+            top: 0;
+            border-top: 25px solid #000;
+        }
+
+        .cont:after {
+            bottom: 0;
+            border-bottom: 25px solid #000;
+        }
+
+        .new,
+        .layer {
+            width: 20px;
+            border-style: solid;
+            border-color: transparent;
+            box-shadow: none;
+        }
+
+        .new.one {
+            border-width: 120px 80px 0px 80px;
+            border-top-color: #05386b;
+            position: relative;
+        }
+
+        .new.two {
+            border-width: 0px 80px 120px 80px;
+            border-bottom-color: #05386b;
+        }
+
+        .new.one:before {
+            position: absolute;
+            content: '';
+            bottom: -15px;
+            width: 20px;
+            height: 10px;
+            background: #000;
+            left: -10px;
+            border-width: 10px 10px 10px 10px;
+            border-style: solid;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            border-left-color: #fff;
+            border-right-color: #fff;
+            z-index: 1;
+        }
+
+        .layer {
+            position: absolute;
+            height: 5px;
+        }
+
+        .layer.one {
+            top: 0;
+            border-top-color: rgb(75, 61, 61);
+            border-width: 120px 80px 0 80px;
+        }
+
+        .layer.three {
+            top: 0;
+            border-top-color: #05386b;
+            border-width: 0px 80px 0 80px;
+        }
+
+        .layer.two {
+            bottom: 0;
+            border-bottom-color: #000;
+            border-width: 0 80px 120px 80px;
+        }
+
+        @keyframes rotate {
+            40% {
+                transform: rotate(180deg);
+            }
+
+            50% {
+                transform: rotate(360deg);
+            }
+
+            90% {
+                transform: rotate(360deg);
+            }
+
+            100% {
+                transform: rotate(540deg);
+            }
+        }
+
+        @keyframes hourglassAnimateOne {
+            0% {
+                border-width: 0px 80px 0 80px;
+            }
+
+            40% {
+                border-width: 115px 80px 0 80px;
+            }
+
+            100% {
+                border-width: 115px 80px 0 80px;
+            }
+        }
+
+        @keyframes hourglassAnimateThree {
+            40% {
+                border-width: 0px 80px 0 80px;
+            }
+
+            100% {
+                border-width: 115px 80px 0 80px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -22,6 +155,9 @@
     </div>
     <div class="fullscreen">
         <div class="loader-4" color="#05386b"></div>
+    </div>
+    <div class="fullscreen">
+        <div class="loader-5"></div>
     </div>
 
     <script src="main.js"></script>
